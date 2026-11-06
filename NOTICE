@@ -1,0 +1,20 @@
+Light-WeChat — open-source edition
+Public-edition adaptations dated 2026-11-06.
+
+Project-authored code, workflow documentation and adaptations are distributed
+under the GNU Affero General Public License, version 3 only (AGPL-3.0-only).
+The complete license is provided in LICENSE.
+
+Unmodified third-party material retains its original copyright notices and
+licenses. See THIRD_PARTY_NOTICES.md and vendor/manifest.json. In particular,
+MIT-licensed upstream material is not represented as newly authored project code.
+
+The public edition changes configuration, account authorization, portable runtime
+discovery, draft delivery boundaries and release checks. Private accounts, article
+workspaces, deployment integrations and private history are not included. The
+maintainer expressly authorized the public website link, supplied screenshot and
+support/contact QR images for the README; see assets/readme/README.md. Those are
+documentation assets, not runtime account settings or default article content.
+
+The software license does not grant rights to unrelated trademarks, photographs,
+publication content or third-party assets acquired separately by its users.

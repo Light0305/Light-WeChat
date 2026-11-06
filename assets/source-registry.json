@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "notes": "Seed discovery sources, not an exhaustive list or fact certification. Verify availability each run; web bookmarks require direct reading.",
+  "sources": [
+    {"id": "aihot-selected", "kind": "rss", "url": "https://aihot.news/feed.xml", "area": "ai-discovery", "role": "secondary-discovery"},
+    {"id": "aihot-daily", "kind": "rss", "url": "https://aihot.news/feed/daily.xml", "area": "ai-digest-discovery", "role": "secondary-discovery"},
+    {"id": "aihot-hot", "kind": "web", "url": "https://aihot.news/hot", "area": "ai-event-discovery", "role": "secondary-discovery"},
+    {"id": "aihot-agent", "kind": "web", "url": "https://aihot.news/agent", "area": "ai-discovery-access-reference"},
+    {"id": "openai", "kind": "rss", "url": "https://openai.com/news/rss.xml", "area": "ai"},
+    {"id": "huggingface", "kind": "rss", "url": "https://huggingface.co/blog/feed.xml", "area": "ai-tools"},
+    {"id": "github-blog", "kind": "rss", "url": "https://github.blog/feed/", "area": "software-engineering"},
+    {"id": "arxiv-ai", "kind": "rss", "url": "https://rss.arxiv.org/rss/cs.AI", "area": "paper"},
+    {"id": "arxiv-se", "kind": "rss", "url": "https://rss.arxiv.org/rss/cs.SE", "area": "software-engineering-paper"},
+    {"id": "arxiv-systems", "kind": "rss", "url": "https://rss.arxiv.org/rss/cs.DC", "area": "systems-paper"},
+    {"id": "ccf", "kind": "web", "url": "https://www.ccf.org.cn/Academic_Evaluation/By_category/", "area": "venue-verification"},
+    {"id": "cvf", "kind": "web", "url": "https://openaccess.thecvf.com/", "area": "cv-paper"},
+    {"id": "acl", "kind": "web", "url": "https://aclanthology.org/", "area": "nlp-paper"},
+    {"id": "openreview", "kind": "web", "url": "https://openreview.net/", "area": "paper-review"},
+    {"id": "dblp", "kind": "web", "url": "https://dblp.org/", "area": "cs-paper-metadata"},
+    {"id": "ieee", "kind": "web", "url": "https://ieeexplore.ieee.org/", "area": "engineering-paper"},
+    {"id": "acm", "kind": "web", "url": "https://dl.acm.org/", "area": "cs-paper"},
+    {"id": "crossref", "kind": "web", "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/", "area": "doi-verification"},
+    {"id": "openalex", "kind": "web", "url": "https://help.openalex.org/", "area": "cross-disciplinary-discovery"},
+    {"id": "bls", "kind": "web", "url": "https://www.bls.gov/ooh/computer-and-information-technology/", "area": "career-US-only"}
+  ]
+}

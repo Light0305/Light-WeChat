@@ -1,0 +1,17 @@
+title = "Chuan Lab public-source secret checks"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "wechat-app-secret"
+description = "Literal WeChat AppSecret"
+regex = '''(?i)(?:wechat_app_secret|appsecret)["'\s]*[:=][\s"']*([a-f0-9]{32})'''
+secretGroup = 1
+
+[[rules]]
+id = "literal-images-api-key"
+description = "Literal configured Images API credential"
+regex = '''(?i)(?:image_api_key|openai_api_key)["'\s]*[:=][\s"']*([a-z0-9_-]{24,})'''
+secretGroup = 1
+entropy = 3.0

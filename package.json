@@ -1,0 +1,10 @@
+{
+  "name": "light-wechat-skill-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Optional local cover QA; article preview uses Node and an installed browser directly.",
+  "license": "AGPL-3.0-only",
+  "engines": {"node": ">=22.16.0"},
+  "devDependencies": {"playwright": "1.60.0"},
+  "scripts": {"check:cover": "node scripts/validate_cover_deck.mjs"}
+}

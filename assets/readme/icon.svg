@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Light-WeChat icon</title>
+  <rect width="128" height="128" rx="28" fill="#F6F7F2"/>
+  <path d="M29 28h15v58h49v15H29z" fill="#202126"/>
+  <path d="M56 28h41v41H73L56 84z" fill="#16875D"/>
+  <path d="M66 41h21M66 52h15" fill="none" stroke="#fff" stroke-width="4"/>
+</svg>

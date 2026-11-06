@@ -1,0 +1,4 @@
+interface:
+  display_name: "Light-WeChat 公众号工作流"
+  short_description: "证据驱动的公众号选题、写作、审稿、配图与移动预览，可配置草稿箱上传"
+  default_prompt: "用 $light-wechat 研究一个适合我的公众号选题，并在选定后完成文章与本地移动预览。"

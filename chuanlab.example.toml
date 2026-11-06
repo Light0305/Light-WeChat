@@ -1,0 +1,24 @@
+# Copy to chuanlab.toml. Keep local settings and credentials out of Git.
+[paths]
+workspace = "workspace"
+
+[publication]
+name = ""
+author = ""
+columns = ["ai", "papers", "careers", "projects"]
+# Optional user-owned image. No contact card is installed by default.
+contact_card = ""
+
+[wechat]
+enabled = false
+
+[preview]
+# Optional absolute Chrome/Edge/Chromium executable; otherwise auto-discover.
+browser = ""
+
+[images]
+# Built-in image generation remains the first choice when the host provides it.
+# Configure an HTTPS Images API only if you want the optional paid fallback.
+enabled = false
+base_url = ""
+model = ""

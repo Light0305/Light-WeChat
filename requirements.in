@@ -1,0 +1,7 @@
+# Maintainers resolve these into requirements.txt; users install the locked file.
+Markdown>=3.8,<4
+Pillow>=11,<14
+python-dotenv>=1.1,<2
+requests>=2.32,<3
+beautifulsoup4>=4.13,<5
+PyYAML>=6,<7

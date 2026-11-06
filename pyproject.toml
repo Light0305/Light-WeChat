@@ -1,0 +1,35 @@
+[project]
+name = "light-wechat-skill"
+version = "1.0.0"
+description = "Portable evidence-led WeChat article workflow with opt-in draft upload."
+requires-python = ">=3.11"
+license = "AGPL-3.0-only"
+dependencies = [
+  "Markdown>=3.8,<4",
+  "Pillow>=11,<14",
+  "python-dotenv>=1.1,<2",
+  "requests>=2.32,<3",
+  "beautifulsoup4>=4.13,<5",
+  "PyYAML>=6,<7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.4,<10"]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+# The deliverable is the complete skill directory, not a separately installed Python module.
+[tool.setuptools]
+packages = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["shared", "scripts", "tools/wechat-publisher"]
+addopts = "-ra"
+markers = ["browser: optional real-browser mobile preview; set RUN_BROWSER_QA=1"]
+
+[tool.ruff]
+target-version = "py311"
+exclude = ["vendor", ".venv", "workspace", "node_modules"]

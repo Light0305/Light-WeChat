@@ -50,8 +50,8 @@ Gitleaks 8.30.1 was installed from the official release with a pinned checksum-d
 Scanning runs locally with full default rules and additional account-key rules; source is not sent to a scanning service.
 A disposable synthetic credential was detected, and a force-tracked credential filename was correctly rejected.
 The final public-source scan returned zero findings from both Gitleaks and the additional local rules.
-The new public repository has no commits to scan. A separate read-only scan of the private source history returned no findings;
-that history is not copied into this repository or release archive.
+The initial public export had no commits; the newly created independent public history is now included in release scans.
+A separate read-only scan of the private source history returned no findings; that history is not copied into this repository or release archive.
 
 ## Packaging and limits
 
@@ -71,6 +71,10 @@ Local GitHub-style README previews were checked at 1100 px and 390 px, including
 Both measured zero broken local images and no document-wide horizontal overflow; the middle contact code is preserved.
 Remote badge images were represented by local text badges in these offline layout proofs, not tested against the badge service.
 The official skills CLI discovered exactly one top-level Skill, `light-wechat`, using its local read-only listing mode.
+
+The first hosted [public-source CI run](https://github.com/Light0305/Light-WeChat/actions/runs/42229478373) passed on both
+Ubuntu and Windows on 2026-11-06, including locked dependency installation, offline behavior tests, upstream verification,
+checksum-verified scanner setup and source/history scanning. The real-browser test remains an explicit local check.
 
 Local execution was verified on Windows with Python 3.11.13 and Node.js 25.8.0. Portable discovery and CI definitions
 cover other supported systems. macOS/Linux desktop execution was not verified locally; hosted CI results are reported separately on GitHub.

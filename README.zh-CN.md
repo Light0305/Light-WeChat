@@ -211,6 +211,7 @@ python scripts/build_release.py
 - 网站：[lightchuan.space](https://lightchuan.space/)，持续分享文章和项目。
 - 问题、建议与使用反馈：[GitHub Issues](https://github.com/Light0305/Light-WeChat/issues)。欢迎 PR 和具体案例，提交前请移除密钥与私人稿件。
 - 邮箱：[1833058953@qq.com](mailto:1833058953@qq.com) · GitHub：[@Light0305](https://github.com/Light0305)。
+- AI小店：[LightChuan-Shop](https://lightchuan.shop)
 
 <table align="center">
   <tr>

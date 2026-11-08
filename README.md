@@ -214,6 +214,7 @@ The optional Guizang HTML cover validator uses `npm ci --ignore-scripts` and a P
 - Visit [lightchuan.space](https://lightchuan.space/) for articles and projects.
 - Questions, bugs and suggestions: [GitHub Issues](https://github.com/Light0305/Light-WeChat/issues). PRs and concrete examples are welcome. Remove keys and private article content from reports.
 - Email: [1833058953@qq.com](mailto:1833058953@qq.com) · GitHub: [@Light0305](https://github.com/Light0305).
+- AI Shop：[LightChuan-Shop](https://lightchuan.shop)
 
 <table align="center">
   <tr>

@@ -1,0 +1,4 @@
+/* The font variables Smear type reads, each a system stack. VARIABLE: put the project's own face first in each. */
+:root {
+  --smear-signature-sans: "Arial Black", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+}

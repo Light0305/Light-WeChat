@@ -1,0 +1,80 @@
+[
+  {
+    "id": "01",
+    "name": "原版粉紫",
+    "file": "01-原版粉紫.gif",
+    "planetColor": "#f12fc0",
+    "flagColor": "#9152ec",
+    "rocketAccent": "#e61fc2",
+    "match": "粉、玫红、紫为主，适合糖果色、亮眼俏皮的视觉",
+    "reference": {
+      "name": "Space Stickers",
+      "url": "https://www.behance.net/gallery/173578849/Space-Stickers-"
+    }
+  },
+  {
+    "id": "02",
+    "name": "钴蓝橙旗",
+    "file": "02-钴蓝橙旗.gif",
+    "planetColor": "#406af7",
+    "flagColor": "#ffa642",
+    "rocketAccent": "#fb6b25",
+    "match": "蓝为主、橙色点缀，适合冷暖对比鲜明的科技或设计主题",
+    "reference": {
+      "name": "BLUE ORANGE Branding",
+      "url": "https://www.behance.net/gallery/111485405/BLUE-ORANGE-Branding"
+    }
+  },
+  {
+    "id": "03",
+    "name": "薄荷薰衣草",
+    "file": "03-薄荷薰衣草.gif",
+    "planetColor": "#4cc4a6",
+    "flagColor": "#ad86eb",
+    "rocketAccent": "#56c6ac",
+    "match": "薄荷绿、浅青或淡紫，适合浅柔、清爽的视觉",
+    "reference": {
+      "name": "Unify Brand Identity Design",
+      "url": "https://www.behance.net/gallery/215245577/Unify-Brand-Identity-Design"
+    }
+  },
+  {
+    "id": "04",
+    "name": "青柠电紫",
+    "file": "04-青柠电紫.gif",
+    "planetColor": "#a8d922",
+    "flagColor": "#8a43f4",
+    "rocketAccent": "#a2e42c",
+    "match": "亮黄绿为主、饱和紫点缀，适合明快、对比强的视觉",
+    "reference": {
+      "name": "Automation / Brand Identity",
+      "url": "https://www.behance.net/gallery/233730491/Automation-Brand-Identity"
+    }
+  },
+  {
+    "id": "05",
+    "name": "琥珀落日",
+    "file": "05-琥珀落日.gif",
+    "planetColor": "#f99038",
+    "flagColor": "#f26f59",
+    "rocketAccent": "#ff922f",
+    "match": "琥珀、橙或珊瑚为主，适合暖调插图和暖色封面",
+    "reference": {
+      "name": "Dynamic Impact — Amber Spectrum",
+      "url": "https://www.behance.net/gallery/237629163/Dynamic-Impact-Branding-Exploration"
+    }
+  },
+  {
+    "id": "06",
+    "name": "冷银朱红",
+    "file": "06-冷银朱红.gif",
+    "planetColor": "#93a8c1",
+    "flagColor": "#ed484e",
+    "rocketAccent": "#f64c57",
+    "match": "银灰或蓝灰为主，适合冷静、低饱和且有红色强调的视觉",
+    "reference": {
+      "name": "Pánico",
+      "url": "https://www.behance.net/gallery/241866169/Panico"
+    }
+  }
+]

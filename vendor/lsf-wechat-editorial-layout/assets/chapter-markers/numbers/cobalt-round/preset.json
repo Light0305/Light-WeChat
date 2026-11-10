@@ -1,0 +1,20 @@
+{
+  "name": "钴蓝圆徽",
+  "params": {
+    "frame": "circle",
+    "seed": 59,
+    "fW1": 14,
+    "fRules": 1,
+    "oSeeds": "frame",
+    "oDensity": 0.51,
+    "oLeaf": "fan",
+    "oLeafSize": 1.3,
+    "oTerminal": "ball",
+    "oFlower": "star",
+    "oFlowerSize": 1.55,
+    "oDots": 0.26,
+    "inkA": "#192B78",
+    "inkB": "#C6F379",
+    "paper": "#F3FFDF"
+  }
+}

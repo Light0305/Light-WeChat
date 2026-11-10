@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INITIĀLIS 透明 GIF 导出</title>
+<h1>INITIĀLIS 透明 GIF 导出</h1>
+<form>
+  <label>章节字母 <input name="letter" pattern="[A-Za-z]" value="A" required></label>
+  <label>样式 <select name="style"></select></label>
+  <button>生成 GIF</button>
+</form>
+<p id="status" role="status">正在加载渲染器</p>
+<img id="preview" width="192" height="192" hidden alt="">
+<a id="download" hidden>下载 GIF</a>
+<script type="module">
+  import { createChapterMarkerRenderer } from "../render-gif.mjs";
+
+  const status = document.querySelector("#status");
+  async function readJson(path) {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error("无法读取 " + path);
+    return response.json();
+  }
+
+  try {
+    const upstream = new URLSearchParams(location.search).get("upstream") || "https://initialis.azlen.me/";
+    const styles = await readJson("styles.json");
+    const presets = new Map(await Promise.all(styles.map(async style => [style, await readJson(style + "/preset.json")])));
+    const render = await createChapterMarkerRenderer(upstream);
+    const form = document.querySelector("form");
+    for (const [style, preset] of presets) {
+      form.elements.style.add(new Option(preset.name, style));
+    }
+
+    // Expose the same exporter to the preview form and batch generation.
+    window.renderChapterMarker = async (letter, style = styles[0]) => {
+      if (!/^[A-Z]$/.test(letter)) throw new Error("请输入一个 A–Z 大写字母");
+      return render(letter, presets.get(style));
+    };
+
+    status.textContent = "可以生成";
+    const button = form.querySelector("button");
+    const preview = document.querySelector("#preview");
+    const download = document.querySelector("#download");
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      button.disabled = true;
+      status.textContent = "正在生成 GIF";
+      const letter = form.elements.letter.value.toUpperCase();
+      try {
+        const gif = await window.renderChapterMarker(letter, form.elements.style.value);
+        if (download.href) URL.revokeObjectURL(download.href);
+        preview.src = download.href = URL.createObjectURL(gif);
+        preview.alt = letter;
+        download.download = letter + ".gif";
+        preview.hidden = download.hidden = false;
+        status.textContent = "生成完成";
+      } catch (error) {
+        status.textContent = error.message;
+      } finally {
+        button.disabled = false;
+      }
+    });
+  } catch (error) {
+    status.textContent = error.message;
+  }
+</script>
+</html>

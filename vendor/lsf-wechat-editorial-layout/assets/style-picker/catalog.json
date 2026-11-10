@@ -1,0 +1,81 @@
+{
+  "intro": [
+    {"id": "01", "name": "翻转贴纸"},
+    {"id": "02", "name": "熔融显字"}
+  ],
+  "chapters": [
+    {
+      "id": "01",
+      "mode": "initialis",
+      "name": "动态字母",
+      "directory": "../chapter-markers/initialis/",
+      "index": "styles.json"
+    },
+    {
+      "id": "02",
+      "mode": "numbers",
+      "name": "动态数字",
+      "directory": "../chapter-markers/numbers/",
+      "index": "styles.json"
+    }
+  ],
+  "stickers": [
+    {
+      "id": "01",
+      "design": "planet-rocket",
+      "name": "星球变火箭",
+      "directory": "../footer-motion/planet-rocket/",
+      "index": "palette-index.json"
+    },
+    {
+      "id": "02",
+      "design": "ai-sticker-ring",
+      "name": "AI 图标旋转环",
+      "directory": "../footer-motion/ai-sticker-ring/",
+      "file": "ai-sticker-ring.gif"
+    },
+    {
+      "id": "03",
+      "design": "fun-sticker-ring",
+      "name": "趣味贴纸旋转环",
+      "directory": "../footer-motion/fun-sticker-ring/",
+      "file": "fun-sticker-ring.gif",
+      "poster": "fun-sticker-ring.png"
+    },
+    {
+      "id": "00",
+      "design": null,
+      "name": "本篇不加"
+    }
+  ],
+  "backgrounds": [
+    {"id": "01", "name": "日落 · Moonvy", "aura": "sunset"},
+    {"id": "02", "name": "星河", "artwork": "star-river.webp"},
+    {"id": "03", "name": "金雨", "artwork": "gold-rain.webp"},
+    {"id": "04", "name": "极光", "aura": "aurora"},
+    {"id": "05", "name": "糖果", "aura": "candy"},
+    {"id": "06", "name": "星海", "aura": "midnight"},
+    {"id": "07", "name": "浅灰", "aura": "lightGray"},
+    {"id": "08", "name": "黄色", "aura": "yellow"},
+    {"id": "09", "name": "绿色", "aura": "green"},
+    {"id": "10", "name": "蓝色", "aura": "blue"},
+    {"id": "11", "name": "午后海岸", "artwork": "met-coast.webp", "source": "https://www.metmuseum.org/art/collection/search/11111"},
+    {"id": "12", "name": "大理石纹纸", "artwork": "met-marbled-paper.webp", "source": "https://www.metmuseum.org/art/collection/search/827568"},
+    {"id": "13", "name": "木曾雪山", "artwork": "met-snowy-mountains.webp", "source": "https://www.metmuseum.org/art/collection/search/36545"},
+    {"id": "14", "name": "柏树麦田", "artwork": "met-wheat-field.webp", "source": "https://www.metmuseum.org/art/collection/search/436535"},
+    {"id": "A01", "name": "睡莲 · 莫奈", "artwork": "commons-16568.webp", "source": "https://www.artic.edu/artworks/16568/water-lilies"},
+    {"id": "A02", "name": "日本桥 · 莫奈", "artwork": "nga-74796.webp", "source": "https://www.nga.gov/artworks/74796-japanese-footbridge"},
+    {"id": "A03", "name": "阿让特伊的桥 · 莫奈", "artwork": "nga-61374.webp", "source": "https://www.nga.gov/artworks/61374-bridge-argenteuil"},
+    {"id": "A04", "name": "普尔维尔悬崖漫步 · 莫奈", "artwork": "commons-14620.webp", "source": "https://www.artic.edu/artworks/14620/cliff-walk-at-pourville"},
+    {"id": "A05", "name": "洛里昂港 · 莫里索", "artwork": "nga-52192.webp", "source": "https://www.nga.gov/artworks/52192-harbor-lorient"},
+    {"id": "A06", "name": "特鲁维尔海滩 · 布丹", "artwork": "nga-52156.webp", "source": "https://www.nga.gov/artworks/52156-beach-trouville"},
+    {"id": "A07", "name": "奥维尔的绿色麦田 · 梵高", "artwork": "nga-163323.webp", "source": "https://www.nga.gov/artworks/163323-green-wheat-fields-auvers"},
+    {"id": "A08", "name": "花开的果园 · 毕沙罗", "artwork": "nga-52195.webp", "source": "https://www.nga.gov/artworks/52195-orchard-bloom-louveciennes"},
+    {"id": "A09", "name": "阿让特伊的画家花园 · 莫奈", "artwork": "nga-72138.webp", "source": "https://www.nga.gov/artworks/72138-artists-garden-argenteuil-corner-garden-dahlias"},
+    {"id": "A10", "name": "普罗旺斯农舍 · 梵高", "artwork": "nga-52178.webp", "source": "https://www.nga.gov/artworks/52178-farmhouse-provence"},
+    {"id": "A11", "name": "橄榄园 · 梵高", "artwork": "nga-46627.webp", "source": "https://www.nga.gov/artworks/46627-olive-orchard"},
+    {"id": "A12", "name": "玫瑰 · 梵高", "artwork": "met-436534.webp", "source": "https://www.metmuseum.org/art/collection/search/436534"},
+    {"id": "A13", "name": "花瓶里的花 · 雷东", "artwork": "nga-52200.webp", "source": "https://www.nga.gov/artworks/52200-flowers-vase"},
+    {"id": "A14", "name": "洛可可花瓶中的花 · 塞尚", "artwork": "nga-46580.webp", "source": "https://www.nga.gov/artworks/46580-flowers-rococo-vase"}
+  ]
+}

@@ -10,8 +10,10 @@ licenses. See THIRD_PARTY_NOTICES.md and vendor/manifest.json. In particular,
 MIT-licensed upstream material is not represented as newly authored project code.
 
 The public edition changes configuration, account authorization, portable runtime
-discovery, draft delivery boundaries and release checks. Private accounts, article
-workspaces, deployment integrations and private history are not included. The
+discovery, draft delivery boundaries and release checks. On 2026-11-10 the default
+article layout gained the published Chuan editorial rhythm and the LSF motion pieces.
+Private accounts, image-generation keys, proxies, servers, website credentials,
+article workspaces, deployment integrations and private history are not included. The
 maintainer expressly authorized the public website link, supplied screenshot and
 support/contact QR images for the README; see assets/readme/README.md. Those are
 documentation assets, not runtime account settings or default article content.

@@ -1,0 +1,21 @@
+{
+  "author": "ChuanLab",
+  "confirmed": "2026-11-10",
+  "intro": {
+    "rule": "sequential-per-article",
+    "ids": ["01", "02", "05", "07", "08", "09", "11", "14", "15", "17", "19", "29", "30", "31"]
+  },
+  "chapters": {
+    "rule": "alternate-per-article",
+    "modes": ["initialis", "numbers"]
+  },
+  "backgrounds": {
+    "rule": "unique-random-per-image",
+    "exclude": ["07"]
+  },
+  "footer": {
+    "left": "ai-sticker-ring",
+    "center_text": "ChuanLab",
+    "right": "user-supplied-qr"
+  }
+}

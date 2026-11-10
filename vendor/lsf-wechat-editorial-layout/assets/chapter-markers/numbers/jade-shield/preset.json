@@ -1,0 +1,19 @@
+{
+  "name": "墨绿盾徽",
+  "params": {
+    "frame": "shield",
+    "seed": 112,
+    "fW1": 13,
+    "fGap": 10,
+    "oSeeds": "gaps",
+    "oLeaf": "oak",
+    "oLeafSize": 1.5,
+    "oTerminal": "flower",
+    "oFlower": "pomegranate",
+    "oFlowerSize": 1.45,
+    "oStemStyle": "thorny",
+    "inkA": "#102F2A",
+    "inkB": "#71D8C6",
+    "paper": "#EBFFF7"
+  }
+}

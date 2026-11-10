@@ -237,37 +237,43 @@ class ChuanEditorial(Assembler):
     def inline(self, node):
         if isinstance(node, Tag):
             inner = "".join(self.inline(c) for c in node.children)
-            if node.name == "strong":
-                return '<strong style="font-weight:650;color:#173f34;">' + inner + '</strong>'
+            if node.name in {"strong", "u"}:
+                return '<strong style="font-weight:400;color:#5e8e3e;">' + inner + '</strong>'
+            if node.name == "a":
+                href = html.escape(node.get("href", ""), quote=True)
+                return f'<a href="{href}" style="color:#5e8e3e;text-decoration:none;overflow-wrap:anywhere;">{inner}</a>'
             if node.name == "code":
-                return '<code style="font:13px/1.7 Consolas,monospace;color:#285447;background:#f3f4f0;padding:1px 4px;">' + leaf(node.get_text()) + '</code>'
+                return '<code style="font:15px/1.7 Consolas,monospace;font-weight:400;color:#1a1a1a;">' + leaf(node.get_text()) + '</code>'
             if node.name == "span":
                 return inner
-            if node.name == "u":
-                return '<span style="border-bottom:1px solid #a9bdb2;">' + inner + '</span>'
         return super().inline(node)
 
     def chapter(self, node):
         self.number += 1
         title = "".join(self.inline(c) for c in node.children)
-        return (f'<section data-cl-section="{self.number:02d}" style="margin:52px 0 22px;padding:18px 0 0;border-top:1px solid #d9dfda;">'
-                f'<p style="font:11px/1.5 Georgia,serif;color:#7b8c80;letter-spacing:2px;margin:0 0 10px;">{leaf(f"{self.number:02d}")}</p>'
-                '<h2 style="font-family:\'Noto Serif SC\',\'Songti SC\',SimSun,serif;font-size:22px;font-weight:700;line-height:1.55;letter-spacing:.3px;color:#173b30;margin:0;">'
+        return (f'<section data-cl-section="{self.number:02d}" style="margin:0;text-align:center;">'
+                '<h2 style="font-size:22px;font-weight:500;line-height:1.4;letter-spacing:0.544px;color:#1a1a1a;margin:0 0 18px;text-align:center;">'
                 + title + '</h2></section>')
 
     def image(self, node):
-        # No shadows, rounding, badges or synthetic device frames on evidence.
-        attrs = 'src="' + html.escape(node.get("src", ""), quote=True) + '" alt="' + html.escape(node.get("alt", ""), quote=True) + '"'
-        return '<section style="margin:28px 0 12px;"><img ' + attrs + ' style="display:block;width:100%;height:auto;margin:0;border:0;"/></section>'
+        src = html.escape(node.get("src", ""), quote=True)
+        alt = html.escape(node.get("alt", ""), quote=True)
+        attrs = f'src="{src}" alt="{alt}"'
+        if "chapter-markers/" in node.get("src", ""):
+            return ('<section style="margin:40px 0 0;height:66px;padding:12px 0 0;text-align:center;line-height:1;">'
+                    f'<img {attrs} width="42" height="42" style="width:42px;height:42px;"/></section>')
+        if "intro-wordmark" in node.get("src", ""):
+            return f'<section style="margin:0 0 22px;"><img {attrs} style="display:block;border-radius:8px;"/></section>'
+        return f'<section style="margin:16px 0 0;"><img {attrs} style="display:block;border-radius:8px;"/></section>'
 
     def table(self, node):
         table = fragment(str(node)).find("table")
-        table["style"] = "border-collapse:collapse;width:100%;table-layout:fixed;margin:28px 0;font-size:13px;line-height:1.85;letter-spacing:0;"
+        table["style"] = "border-collapse:collapse;width:100%;margin:4px 0 28px;font-size:14px;line-height:1.6;letter-spacing:0;color:#1a1a1a;"
         for cell in table.find_all(["th", "td"]):
             alignment = re.search(r"text-align\s*:\s*(left|right|center)", cell.get("style", ""))
             head = cell.name == "th"
-            style = ("padding:12px 7px;border-bottom:1px solid #d9dfda;vertical-align:top;overflow-wrap:anywhere;"
-                     + ("color:#285447;font-weight:650;background:#f4f5f1;" if head else "color:#414844;font-weight:400;")
+            style = ("padding:9px 8px;border-bottom:1px solid #e4e4e4;vertical-align:top;"
+                     + ("color:#1a1a1a;font-weight:500;background:#f7f7f5;" if head else "color:#333;font-weight:400;")
                      + "text-align:" + (alignment.group(1) if alignment else "left") + ";")
             inner = self.inline(cell)
             cell.clear()
@@ -278,49 +284,47 @@ class ChuanEditorial(Assembler):
     def code(self, node):
         code = node.find("code")
         text = code.get_text() if code else node.get_text()
-        language = " ".join(code.get("class", [])) if code else ""
-        label = language.removeprefix("language-") or "CODE"
-        return ('<section style="margin:28px 0;padding:16px;background:#f5f5f1;border-top:1px solid #d9dfda;border-bottom:1px solid #d9dfda;">'
-                '<p style="font:10px/1.6 Consolas,monospace;letter-spacing:1.5px;color:#7b8c80;margin:0 0 12px;">' + leaf(label.upper()) + '</p>'
-                '<pre style="margin:0;font:13px/1.8 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;color:#293d33;">'
+        return ('<section style="margin:0 0 22px;">'
+                '<pre style="margin:0;font:14px/1.7 Consolas,monospace;font-weight:400;white-space:pre-wrap;overflow-wrap:anywhere;color:#1a1a1a;">'
                 '<code style="font-family:Consolas,monospace;white-space:pre-wrap;">' + leaf(text) + '</code></pre></section>')
 
     def block(self, node):
         if isinstance(node, Tag):
             if node.name == "p" and not node.find("img"):
-                return '<p style="margin:0 0 22px;font-size:16px;line-height:1.95;letter-spacing:.3px;text-align:justify;">' + self.inline(node) + '</p>'
+                return '<p style="margin:0 0 22px;font-weight:300;line-height:1.9;letter-spacing:.544px;text-align:left;">' + self.inline(node) + '</p>'
             if node.name in {"h3", "h4"}:
-                return '<h3 style="font-size:17px;line-height:1.65;font-weight:650;color:#173b30;margin:30px 0 14px;">' + self.inline(node) + '</h3>'
+                return '<h3 style="font-size:18px;line-height:1.4;font-weight:500;color:#1a1a1a;margin:0 0 24px;text-align:left;">' + self.inline(node) + '</h3>'
             if node.name == "blockquote":
-                return ('<section style="margin:34px 0;padding:22px 0;border-top:1px solid #d9dfda;border-bottom:1px solid #d9dfda;">'
-                        '<p style="font-family:\'Noto Serif SC\',\'Songti SC\',SimSun,serif;font-size:20px;line-height:1.85;color:#285447;margin:0;">'
-                        + '<br>'.join(self.inline(c) for c in node.children if isinstance(c, Tag)) + '</p></section>')
+                return ('<p style="margin:0 0 22px;font-size:16px;font-weight:300;line-height:1.9;letter-spacing:0.544px;color:#1a1a1a;">'
+                        + '<br>'.join(self.inline(c) for c in node.children if isinstance(c, Tag)) + '</p>')
             if node.name in {"ul", "ol"}:
                 start = f' start="{html.escape(str(node["start"]), quote=True)}"' if node.name == "ol" and "start" in node.attrs else ""
-                return f'<{node.name}{start} style="padding-left:1.4em;margin:20px 0 26px;font-size:16px;line-height:1.95;">' + ''.join(self.block(c) for c in node.children) + f'</{node.name}>'
+                return f'<{node.name}{start} style="padding-left:1.2em;margin:0 0 22px;font-size:16px;font-weight:300;line-height:1.9;color:#1a1a1a;">' + ''.join(self.block(c) for c in node.children) + f'</{node.name}>'
+            if node.name == "li":
+                return '<li style="margin:0 0 8px;">' + self.inline(node) + '</li>'
             if node.name == "section":
                 classes = node.get("class", [])
                 kind = next((c[3:] for c in classes if c.startswith("cl-")), None)
                 if kind:
                     inner = ''.join(self.inline(c) for c in node.children)
                     if kind == "byline":
-                        style = "margin:0 0 24px;padding:12px 0;border-bottom:1px solid #d9dfda;font-size:11px;line-height:1.7;letter-spacing:1.5px;color:#65756b;"
-                    elif kind == "lead":
-                        style = "margin:0 0 28px;font-family:'Noto Serif SC','Songti SC',SimSun,serif;font-size:23px;line-height:1.75;letter-spacing:.5px;color:#173b30;"
-                    elif kind in {"image-note", "source-note"}:
-                        style = "margin:8px 0 30px;padding:0;font-size:12px;line-height:1.85;color:#79847c;letter-spacing:0;"
-                    elif kind == "sep":
-                        return '<section style="margin:36px 0;border-top:1px solid #d9dfda;"><span leaf=""><br></span></section>'
-                    else:
-                        style = "margin:26px 0;padding:18px 0;border-top:1px solid #d9dfda;border-bottom:1px solid #d9dfda;line-height:1.9;"
-                    return '<section style="' + style + '">' + inner + '</section>'
+                        return ""
+                    if kind == "lead":
+                        return '<p style="margin:0 0 22px;font-weight:300;line-height:1.9;letter-spacing:.544px;text-align:left;">' + inner + '</p>'
+                    if kind == "image-note":
+                        return '<p style="margin:8px 0 18px;padding:0 10%;font-size:11px;font-weight:400;line-height:1.4;letter-spacing:0;text-align:center;color:#aaa;">' + inner + '</p>'
+                    if kind == "source-note":
+                        return ""
+                    if kind == "sep":
+                        return ""
+                    return '<p style="margin:0 0 22px;font-size:16px;font-weight:300;line-height:1.9;color:#1a1a1a;">' + inner + '</p>'
         return super().block(node)
 
     def render(self, body):
         content = ''.join(self.block(n) for n in fragment(body).contents)
-        return ('<section data-gzh-theme="chuan-editorial" style="max-width:677px;margin:0 auto;padding:0 0 28px;background:#ffffff;'
-                'font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Microsoft YaHei\',sans-serif;'
-                'font-size:16px;line-height:1.95;letter-spacing:.3px;color:#303a34;overflow-wrap:break-word;">' + content + '</section>')
+        return ('<section data-gzh-theme="chuan-editorial" style="max-width:677px;margin:0 auto;padding:0 6px 28px;background:#ffffff;'
+                'font-family:-apple-system,BlinkMacSystemFont,\'Helvetica Neue\',\'PingFang SC\',\'Microsoft YaHei\',sans-serif;'
+                'font-size:16px;font-weight:300;line-height:1.9;letter-spacing:0.544px;color:#1a1a1a;overflow-wrap:break-word;">' + content + '</section>')
 
 
 def apply_gzh_layout(body, name):

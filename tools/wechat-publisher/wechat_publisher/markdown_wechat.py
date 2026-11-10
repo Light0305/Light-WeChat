@@ -573,8 +573,10 @@ def add_local_image_metadata(content_html: str, markdown_path: str | Path) -> st
 
         style_match = re.search(r'\sstyle="([^"]*)"', tag, re.I)
         style = style_match.group(1) if style_match else ""
+        explicit_width = re.search(r'(?<![-\w])width\s*:\s*(\d+px)', style, flags=re.I)
         style = re.sub(r'(?<![-\w])width\s*:[^;]*;?', "", style, flags=re.I)
-        set_attr("style", "width:100%;" + style)
+        display_width = explicit_width.group(1) if explicit_width else "100%"
+        set_attr("style", f"width:{display_width};" + style)
         class_match = re.search(r'\sclass="([^"]*)"', tag, re.I)
         classes = (class_match.group(1).split() if class_match else [])
         for name in ("rich_pages", "wxw-img", "js_insertlocal"):
@@ -582,7 +584,7 @@ def add_local_image_metadata(content_html: str, markdown_path: str | Path) -> st
                 classes.append(name)
         set_attr("class", " ".join(classes))
         for name, value in {
-            "width": "100%", "data-w": str(width), "data-h": str(height),
+            "width": display_width, "data-w": str(width), "data-h": str(height),
             "data-ratio": str(height / width), "data-type": image_type,
             "data-s": "300,640",
         }.items():

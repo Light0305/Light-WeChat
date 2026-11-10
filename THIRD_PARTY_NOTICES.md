@@ -21,6 +21,13 @@ Guizang also supplies [COMMERCIAL_LICENSING.md](vendor/guizang/COMMERCIAL_LICENS
 This project uses the included AGPL license, does not claim a separate commercial license, and does not alter that offer.
 An ISC value in upstream package metadata does not replace its included LICENSE; this distribution follows the included AGPL text.
 
+`vendor/lsf-wechat-editorial-layout/` is an unmodified copy of leishifu666/lsf-wechat-editorial-layout
+at `f442dc948e176e5a12ab6cb23fcff9827d500a06`. Its LICENSE and THIRD_PARTY_NOTICES.md stay with the files.
+The project adapter is `scripts/lsf_editorial.py` and `assets/lsf-editorial/selection.json`.
+Opening motion, chapter markers, content-image backgrounds and the footer ring are layout material.
+The skill does not include the maintainer's WeChat account, image-generation keys, proxy, server or website credentials.
+A footer QR is supplied by the person using the skill.
+
 Nine binary background assets are pinned Guizang originals, not developer contact cards or article images.
 External photos, screenshots, fonts and generated article assets must have their own usage basis; upstream examples do not grant rights to unrelated material.
 

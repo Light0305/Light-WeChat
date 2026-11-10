@@ -64,7 +64,8 @@ description: 为微信公众号研究选题、撰写有证据的文章、审稿�
 
 读 [排版接入](references/layout.md) 与所选 [主题原件](vendor/gzh-design/references/theme-index.md)、
 [通用组件](vendor/gzh-design/references/common-components.md)。默认 [Chuan 编辑版](references/chuan-editorial.md)，
-按整篇组织字图与阅读节奏，避免机械堆卡片、阴影、标签和品牌装饰。它是对上游 Zen 语法的适配，不冒称未修改原件。
+按整篇组织字图与阅读节奏。开篇动效、章节标记、内容图背景和文末贴纸按 [排版动效](references/lsf-editorial.md) 执行。
+避免机械堆卡片、阴影、标签和品牌装饰。它是对上游 Zen 语法的适配，不冒称未修改原件。
 图表与代码保持可读、完整和可复制。运行实际 375/390 px 浏览器截图，查看首屏、章节、证据图、表格、代码和结尾；
 HTML 生成或检查器通过不等于视觉验收。
 

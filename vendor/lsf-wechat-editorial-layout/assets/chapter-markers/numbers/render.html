@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INITIĀLIS 数字 GIF 导出</title>
+<h1>INITIĀLIS 数字 GIF 导出</h1>
+<form>
+  <label>数字 <input name="number" inputmode="numeric" pattern="[0-9]{1,3}" value="1" required></label>
+  <label>样式 <select name="style"></select></label>
+  <button disabled>生成 GIF</button>
+</form>
+<p id="status" role="status">正在加载</p>
+<img id="preview" width="192" height="192" hidden alt="">
+<a id="download" hidden>下载 GIF</a>
+<script type="module">
+  import { createChapterMarkerRenderer } from "../render-gif.mjs";
+
+  const status = document.querySelector("#status");
+  const form = document.querySelector("form");
+  const button = form.querySelector("button");
+  const preview = document.querySelector("#preview");
+  const download = document.querySelector("#download");
+  async function readJson(path) {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error("无法读取 " + path);
+    return response.json();
+  }
+
+  try {
+    const upstream = new URLSearchParams(location.search).get("upstream");
+    if (!upstream) throw new Error("请用 ?upstream= 指向已补入数字字形的本地 INITIĀLIS");
+    const available = await readJson("styles.json");
+    const base = await readJson("../initialis/preset.json");
+    const render = await createChapterMarkerRenderer(upstream);
+    const presets = new Map(await Promise.all(available.map(async (style) => [style, await readJson(style + "/preset.json")])));
+    for (const [id, preset] of presets) {
+      form.elements.style.add(new Option(preset.name, id));
+    }
+
+    window.renderNumericChapterMarker = (number, style) => {
+      const variant = presets.get(style);
+      if (!/^[0-9]{1,3}$/.test(number) || !variant) throw new Error("请选择样式并输入一至三位数字");
+      const size = Math.min(variant.params.size, number.length === 1 ? 0.67 : 0.70);
+      return render(number, { ...base, params: { ...variant.params, font: "cinzel-900", size } });
+    };
+    status.textContent = "可以生成";
+    button.disabled = false;
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      button.disabled = true;
+      status.textContent = "正在生成 GIF";
+      const number = form.elements.number.value;
+      const style = form.elements.style.value;
+      try {
+        const gif = await window.renderNumericChapterMarker(number, style);
+        if (download.href) URL.revokeObjectURL(download.href);
+        preview.src = download.href = URL.createObjectURL(gif);
+        preview.alt = number;
+        download.download = number + ".gif";
+        preview.hidden = download.hidden = false;
+        status.textContent = "生成完成";
+      } catch (error) {
+        status.textContent = error.message;
+      } finally {
+        button.disabled = false;
+      }
+    });
+  } catch (error) {
+    status.textContent = error.message;
+  }
+</script>
+</html>

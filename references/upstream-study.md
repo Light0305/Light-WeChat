@@ -11,6 +11,7 @@
 | [gzh-design-skill](https://github.com/isjiamu/gzh-design-skill) | 六套主题完整 HTML 组件库、通用组件、生成器、两份检查器及预览工具 | 本地后端实际装配提取的原 HTML；article_quality 调原 validate_gzh_html；复杂组件按主题原配方直接填入 |
 | [guizang-social-card-skill](https://github.com/op7418/guizang-social-card-skill) | 两套完整种子模板、28 种布局配方、10 个配色、背景素材、生产与 QA 参考、R1–R9 检查器 | cover_pair 从种子填稿；validate_cover_deck 运行原检查器；布局/短标题/图像处理按原参考 |
 | [humanizer](https://github.com/blader/humanizer) | 完整 SKILL 与 MIT LICENSE | 写作/编辑时处理夸张、虚假归因、模板表达，保留事实与术语 |
+| [lsf-wechat-editorial-layout](https://github.com/leishifu666/lsf-wechat-editorial-layout) | 开篇动效、章节标记、截图背景、文末环和对应脚本 | 排版时按 references/lsf-editorial.md 的固定选择轮换；原件不改 |
 
 AIHOT/wewrite/baoyu/humanizer 为 MIT；gzh-design 原 LICENSE 为 AGPL-3.0-or-later，
 归藏保留 AGPL LICENSE 与商业许可说明。仓库 package.json 的 license 字段与 LICENSE

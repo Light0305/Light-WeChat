@@ -1,0 +1,19 @@
+{
+  "name": "朱铜拱窗",
+  "params": {
+    "frame": "arch",
+    "seed": 83,
+    "fW1": 15,
+    "fGap": 9,
+    "oSeeds": "root",
+    "oSeedCount": 4,
+    "oLeaf": "willow",
+    "oLeafSize": 1.4,
+    "oTerminal": "leaf",
+    "oFlower": "tulip",
+    "oFlowerSize": 1.4,
+    "inkA": "#4D1624",
+    "inkB": "#EF9C70",
+    "paper": "#FFF1D1"
+  }
+}

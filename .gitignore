@@ -34,3 +34,4 @@ tmp/
 .remotion/
 out/
 *.mp4
+runtime/

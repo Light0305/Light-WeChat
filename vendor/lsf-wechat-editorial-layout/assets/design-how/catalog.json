@@ -1,0 +1,164 @@
+[
+  {
+    "id": "tile-field",
+    "number": "03",
+    "name": "文字点阵",
+    "kind": "text"
+  },
+  {
+    "id": "pixel-scan",
+    "number": "05",
+    "name": "像素扫描",
+    "kind": "text"
+  },
+  {
+    "id": "typer",
+    "number": "06",
+    "name": "逐字解码",
+    "kind": "text"
+  },
+  {
+    "id": "design-tiles",
+    "number": "07",
+    "name": "彩色字块",
+    "kind": "text"
+  },
+  {
+    "id": "emboss",
+    "number": "08",
+    "name": "Logo 浮雕",
+    "kind": "logo"
+  },
+  {
+    "id": "blur-glow",
+    "number": "09",
+    "name": "光晕换词",
+    "kind": "scenes"
+  },
+  {
+    "id": "dot-cut",
+    "number": "10",
+    "name": "圆点镂空",
+    "kind": "scenes"
+  },
+  {
+    "id": "pixel-threshold",
+    "number": "11",
+    "name": "像素换页",
+    "kind": "scenes"
+  },
+  {
+    "id": "word-carousel",
+    "number": "12",
+    "name": "词语轮播",
+    "kind": "scenes"
+  },
+  {
+    "id": "glass-type",
+    "number": "13",
+    "name": "玻璃折射",
+    "kind": "scenes"
+  },
+  {
+    "id": "reality-split",
+    "number": "14",
+    "name": "文字拆解",
+    "kind": "scenes"
+  },
+  {
+    "id": "stamp-type",
+    "number": "15",
+    "name": "印章切页",
+    "kind": "scenes"
+  },
+  {
+    "id": "loud-burst",
+    "number": "16",
+    "name": "爆裂文字",
+    "kind": "scenes"
+  },
+  {
+    "id": "wild-type",
+    "number": "17",
+    "name": "弹性变形",
+    "kind": "text"
+  },
+  {
+    "id": "swing-type",
+    "number": "18",
+    "name": "摆动换词",
+    "kind": "scenes"
+  },
+  {
+    "id": "flood-type",
+    "number": "19",
+    "name": "文字涌动",
+    "kind": "scenes"
+  },
+  {
+    "id": "verb-type",
+    "number": "20",
+    "name": "动词分镜",
+    "kind": "scenes"
+  },
+  {
+    "id": "cloud-type",
+    "number": "22",
+    "name": "云雾显字",
+    "kind": "text"
+  },
+  {
+    "id": "flip-type",
+    "number": "23",
+    "name": "逐字翻牌",
+    "kind": "scenes"
+  },
+  {
+    "id": "warp-type",
+    "number": "24",
+    "name": "文字变形分镜",
+    "kind": "scenes"
+  },
+  {
+    "id": "roll-type",
+    "number": "25",
+    "name": "滚动换页",
+    "kind": "scenes"
+  },
+  {
+    "id": "stack-type",
+    "number": "26",
+    "name": "叠字收拢",
+    "kind": "text"
+  },
+  {
+    "id": "rush-type",
+    "number": "27",
+    "name": "高速残影",
+    "kind": "scenes"
+  },
+  {
+    "id": "bond-type",
+    "number": "28",
+    "name": "分子连字",
+    "kind": "scenes"
+  },
+  {
+    "id": "dash-cascade",
+    "number": "29",
+    "name": "虚线展开",
+    "kind": "scenes"
+  },
+  {
+    "id": "chroma-glow",
+    "number": "30",
+    "name": "色散辉光",
+    "kind": "scenes"
+  },
+  {
+    "id": "smear-type",
+    "number": "31",
+    "name": "流墨显字",
+    "kind": "text"
+  }
+]

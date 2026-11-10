@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN" data-direction="dinamo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>公众号排版预览</title>
+<!-- PICKER STYLES -->
+<!-- INTRO STYLES -->
+</head>
+<body>
+<div class="room">
+ <aside class="sidebar">
+  <nav class="index" aria-label="索引">
+   <div class="brand">公众号排版预览<small>试样室</small></div>
+   <ol>
+    <li><a href="#style-selection">选样</a></li>
+    <!-- PRESET NAV -->
+    <li><a href="#studio-article">文章</a></li>
+   </ol>
+  </nav>
+  <!-- PRESETS -->
+ </aside>
+
+ <main class="bench" id="bench" aria-label="选样">
+  <form id="style-selection"><!-- OPTIONS --></form>
+
+  <div id="studio-actions">
+   <div class="feedback">
+    <button class="copy-button" type="submit" form="style-selection">复制选择</button>
+    <button class="btn-quiet jump-preview" type="button" id="jump-preview" hidden>看效果</button>
+    <details class="notes-disclosure"><summary>补充意见</summary>
+     <textarea id="notes" rows="3" aria-label="补充意见" placeholder="想让 Agent 一起注意的地方"></textarea>
+    </details>
+    <p class="task-status" id="copy-status" role="status"></p>
+    <textarea id="copy-fallback" aria-label="待复制的选择" rows="5" readonly hidden></textarea>
+   </div>
+  </div>
+ </main>
+
+ <section class="read" aria-label="文章预览">
+  <div class="read-scroll reading-scroll"><article class="article-demo" id="studio-article"<!-- DRAFT ATTRIBUTE -->>
+  <!-- ARTICLE -->
+</article></div>
+ </section>
+</div>
+<!-- PICKER SCRIPT -->
+<!-- INTRO SCRIPT -->
+</body>
+</html>

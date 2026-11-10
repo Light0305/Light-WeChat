@@ -1,0 +1,12 @@
+{
+  "name": "紫金方印",
+  "params": {
+    "frame": "rect",
+    "seed": 14,
+    "oSeeds": "corners",
+    "oLeaf": "ivy",
+    "inkA": "#292143",
+    "inkB": "#D5A957",
+    "paper": "#FFF4D7"
+  }
+}
